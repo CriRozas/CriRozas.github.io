@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { RouterLink } from "@angular/router";
+import { RouterLink } from '@angular/router';
 
 @Component({
   selector: 'app-header',
@@ -8,5 +8,9 @@ import { RouterLink } from "@angular/router";
   styleUrl: './header.css',
 })
 export class Header {
-
+  // Angular Component TS
+  toggleMenu() {
+    const menu = document.getElementById('mobile-menu');
+    if (menu) menu.classList.toggle('hidden');
+  }
 }

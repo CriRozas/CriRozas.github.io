@@ -1,12 +1,15 @@
 import { Component } from '@angular/core';
+import { CommonModule } from '@angular/common';
+import { RouterModule } from '@angular/router';
+import { GaleriaService } from '../../service/galeriaService';
 
 @Component({
   selector: 'app-experiencia',
-  imports: [],
+  standalone: true,
+  imports: [CommonModule, RouterModule],
   templateUrl: './experiencia.html',
   styleUrl: './experiencia.css',
 })
 export class Experiencia {
-  imagenes: string[] = ['esgrima', 'futbol', 'espana', 'tenis', 'atletismo'];
-
+  constructor(public galeria: GaleriaService) {}
 }

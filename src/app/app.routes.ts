@@ -9,4 +9,6 @@ export const routes: Routes = [
     { path: 'precios', loadComponent: () => import('./components/precios/precios').then(m => m.Precios) },
     { path: 'diferenciales', loadComponent: () => import('./components/diferenciales/diferenciales').then(m => m.Diferenciales) },
     { path: 'contacto', loadComponent: () => import('./components/contacto/contacto').then(m => m.Contacto) },
+    { path: 'entrena', loadComponent: () => import('./components/entrena/entrena').then(m => m.Entrena) },
+    { path: '**', redirectTo: '' }
 ];

@@ -3,11 +3,10 @@
     <h2 class="text-3xl font-semibold text-center mb-12">Momentos Profesionales</h2>
 
     <div class="grid grid-cols-2 md:grid-cols-4 gap-6">
-         @for (name of imagenes; track name) {
-            <div class="overflow-hidden rounded-lg shadow-lg hover:scale-105 transition-transform">
-                <img src="assets/{{name}}.jpeg" alt="{{name}}" class="w-full h-48 object-cover">
-            </div>
-        }
+      <div *ngFor="let url of galeria.imagenes$ | async"
+           class="overflow-hidden rounded-lg shadow-lg hover:scale-105 transition-transform">
+        <img [src]="url" alt="Imagen galería" class="w-full h-48 object-cover">
+      </div>
     </div>
   </div>
 </section>

@@ -5,7 +5,7 @@ export default defineConfig({
   site: 'https://CriRozas.github.io',
   
   // Base para GitHub Pages (nombre exacto del repo)
-  base: '/CriRozas.github.io/',
+  base: '/',
   
   // Tailwind estático y otras integraciones pueden ir aquí si lo deseas
   integrations: [],

@@ -1,0 +1,23 @@
+---
+// BaseLayout.astro
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import '../styles/global.css'; // Importamos Tailwind global
+const base = import.meta.env.BASE_URL;
+---
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CRI las Rozas</title>
+    <link rel="icon" type="image/x-icon" href="/assets/favicon.ico" />
+  </head>
+  <body class="scroll-smooth">
+    <Header />
+    <main>
+      <br/> <!-- Espacio para evitar que el contenido quede oculto tras el header fijo -->
+      <slot />  <!-- Aquí va el contenido de cada página -->
+    </main>
+    <Footer />
+  </body>
+</html>

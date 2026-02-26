@@ -1,0 +1,29 @@
+---
+// psicologia.astro
+import BaseLayout from '../layouts/BaseLayout.astro';
+const base = import.meta.env.BASE_URL;
+---
+
+<BaseLayout>
+  <section class="py-20 bg-gray-50" id="psicologia">
+    <div class="max-w-6xl mx-auto px-6">
+      <h2 class="text-3xl font-semibold text-center mb-12">Servicios de Psicología</h2>
+
+      <p class="text-center text-gray-700 mb-8">
+        Atención profesional para cualquier persona, con especialización en apoyo a deportistas y lesiones deportivas.
+      </p>
+
+      <div class="grid md:grid-cols-2 gap-10">
+        <div class="bg-white p-8 rounded-xl shadow-md">
+          <h3 class="text-xl font-semibold mb-4">Psicología general</h3>
+          <p>Apoyo psicológico para ansiedad, estrés, gestión emocional y desarrollo personal.</p>
+        </div>
+
+        <div class="bg-white p-8 rounded-xl shadow-md">
+          <h3 class="text-xl font-semibold mb-4">Psicología deportiva</h3>
+          <p>Preparación mental, recuperación tras lesiones y acompañamiento en competición.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+</BaseLayout>

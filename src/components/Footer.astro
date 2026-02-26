@@ -1,0 +1,62 @@
+---
+const base = import.meta.env.BASE_URL;
+---
+
+<footer class="bg-gray-800 text-white py-12 mt-20">
+  <div class="max-w-6xl mx-auto px-6 text-center md:text-left grid md:grid-cols-3 gap-8">
+    
+    <!-- LOGO -->
+    <div>
+      <a href={`${base}`} class="flex items-center justify-center md:justify-start mb-4">
+        <img src={`${base}assets/logo-footer.jpeg`} alt="Cri las Rozas" class="h-10 w-auto">
+        <span class="ml-2 font-bold text-white text-lg">Cri las Rozas</span>
+      </a>
+      <p class="text-gray-400">Fisioterapia y Psicología en Las Rozas</p>
+    </div>
+
+    <!-- CONTACTO -->
+    <div>
+      <h3 class="text-xl font-semibold mb-4">Contacto</h3>
+      <p class="mb-2">
+        Teléfono: 
+        <a href="tel:+34674266191" class="text-blue-400 hover:underline">+34 674 26 61 91</a>
+      </p>
+      <p class="mb-2">
+        Email: 
+        <a href="mailto:centrorehabilitacionintegral@gmail.com" class="text-blue-400 hover:underline">
+          centrorehabilitacionintegral@gmail.com
+        </a>
+      </p>
+      <p class="mb-2">
+        Dirección:
+        <a href="https://www.google.com/maps/dir//CRI+LAS+ROZAS"
+           target="_blank"
+           class="text-blue-400 hover:underline">
+          Calle de la Estación, 22, 28231 Las Rozas de Madrid
+        </a>
+      </p>
+    </div>
+
+    <!-- REDES -->
+    <div>
+      <h3 class="text-xl font-semibold mb-4">Síguenos / Contáctanos</h3>
+      <div class="flex justify-center md:justify-start gap-4">
+        <a href="https://wa.me/34674266191"
+           target="_blank"
+           class="bg-green-500 hover:bg-green-600 px-4 py-2 rounded-lg font-medium transition">
+          WhatsApp
+        </a>
+        <a href="https://www.youtube.com/@crilasrozas"
+           target="_blank"
+           class="bg-red-600 hover:bg-red-700 px-4 py-2 rounded-lg font-medium transition">
+          YouTube
+        </a>
+      </div>
+    </div>
+    
+  </div>
+
+  <div class="mt-12 text-center text-gray-500 text-sm">
+    © 2026 Cri las Rozas. Todos los derechos reservados.
+  </div>
+</footer>

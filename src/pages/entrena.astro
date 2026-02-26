@@ -1,6 +1,6 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
-const base = import.meta.env.BASE_URL;
+//const base = import.meta.env.BASE_URL;
 ---
 
 <BaseLayout>
@@ -9,7 +9,7 @@ const base = import.meta.env.BASE_URL;
       <!-- Logo marca personal -->
       <div class="flex justify-center mb-10">
         <img
-          src={`${base}assets/logo-entrenamiento.png`}
+          src="/assets/logo-entrenamiento.png"
           alt="Logo marca personal entrenamiento"
           class="h-40 w-auto object-contain"
         />
@@ -44,14 +44,14 @@ const base = import.meta.env.BASE_URL;
 
         <!-- Imagen -->
         <div class="bg-gray-100 h-96 rounded-xl overflow-hidden">
-          <img src={`${base}assets/carrera.png`} alt="Carrera" class="h-full w-full object-cover" />
+          <img src="/assets/carrera.png" alt="Carrera" class="h-full w-full object-cover" />
         </div>
       </div>
 
       <!-- CTA -->
       <div class="text-center mt-16">
         <a
-          href={`${base}contacto`}
+          href="/contacto"
           class="inline-block bg-blue-700 text-white px-8 py-3 rounded-lg text-lg font-medium hover:bg-blue-800 transition duration-300"
         >
           Solicitar información

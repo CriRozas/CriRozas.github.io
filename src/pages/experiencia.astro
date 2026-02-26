@@ -1,7 +1,7 @@
 ---
 // src/pages/experiencia.astro
 import BaseLayout from '../layouts/BaseLayout.astro';
-const base = import.meta.env.BASE_URL;
+//const base = import.meta.env.BASE_URL;
 ---
 
 <BaseLayout>
@@ -13,9 +13,9 @@ const base = import.meta.env.BASE_URL;
       </p>
 
       <div class="grid md:grid-cols-3 gap-8">
-        <img src={`${base}assets/olimpicos1.jpg`} alt="JJOO Londres 2012" class="h-64 w-full rounded-xl shadow-md object-cover">
-        <img src={`${base}assets/olimpicos2.jpg`} alt="JJOO Río 2016" class="h-64 w-full rounded-xl shadow-md object-cover">
-        <img src={`${base}assets/evento.jpeg`} alt="Clubes y federaciones" class="h-64 w-full rounded-xl shadow-md object-cover">
+        <img src="/assets/olimpicos1.jpg" alt="JJOO Londres 2012" class="h-64 w-full rounded-xl shadow-md object-cover">
+        <img src="/assets/olimpicos2.jpg" alt="JJOO Río 2016" class="h-64 w-full rounded-xl shadow-md object-cover">
+        <img src="/assets/evento.jpeg" alt="Clubes y federaciones" class="h-64 w-full rounded-xl shadow-md object-cover">
       </div>
 
       <ul class="mt-8 text-gray-700 list-disc list-inside max-w-3xl mx-auto">

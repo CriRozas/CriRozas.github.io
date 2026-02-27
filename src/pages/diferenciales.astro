@@ -1,28 +1,106 @@
 ---
-import BaseLayout from '../layouts/BaseLayout.astro';
+import BaseLayout from "../layouts/BaseLayout.astro";
+
+const diferenciales = [
+  {
+    titulo: "Experiencia internacional",
+    texto:
+      "Trabajo con deportistas de alto nivel y experiencia en entornos de máxima exigencia competitiva.",
+    imagenes: [
+      "/assets/diferenciales/exp1.jpg",
+      "/assets/diferenciales/exp2.jpg",
+      "/assets/diferenciales/exp3.jpg"
+    ]
+  },
+  {
+    titulo: "Trato cercano",
+    texto:
+      "Atención personalizada, seguimiento constante y acompañamiento durante todo el proceso de recuperación.",
+    imagenes: [
+      "/assets/diferenciales/cercania1.jpg",
+      "/assets/diferenciales/cercania2.jpg",
+      "/assets/diferenciales/cercania3.jpg"
+    ]
+  },
+  {
+    titulo: "Resultados comprobados",
+    texto:
+      "Recuperaciones eficaces y seguras avaladas por años de experiencia en deporte y salud.",
+    imagenes: [
+      "/assets/diferenciales/resultados1.jpg",
+      "/assets/diferenciales/resultados2.jpg",
+      "/assets/diferenciales/resultados3.jpg"
+    ]
+  }
+];
 ---
 
 <BaseLayout>
-  <section class="py-20 bg-gray-100" id="diferenciales">
+  <section class="py-20 bg-gray-50" id="diferenciales">
     <div class="max-w-6xl mx-auto px-6">
-      <h2 class="text-3xl font-semibold text-center mb-12">Por qué elegirnos</h2>
+      <h2 class="text-3xl font-semibold text-center mb-12">
+        ¿Por qué elegirnos?
+      </h2>
 
-      <div class="grid md:grid-cols-3 gap-10 text-center">
-        <div class="p-8 bg-white rounded-xl shadow-md">
-          <h3 class="text-xl font-semibold mb-4">Experiencia internacional</h3>
-          <p>Juegos Olímpicos y clubes profesionales aplicando experiencia a cada paciente.</p>
-        </div>
+      <div class="grid md:grid-cols-3 gap-8">
+        {diferenciales.map((item) => (
+          <div class="bg-white rounded-xl shadow-md overflow-hidden hover:shadow-lg transition duration-300">
+            
+            <!-- Mini-galería con 3 imágenes -->
+            <div class="flex flex-col gap-1">
+              <img
+                src={item.imagenes[0]}
+                alt="Imagen principal diferencial"
+                class="w-full h-48 md:h-56 object-contain hover:scale-105 transition-transform duration-300 rounded-lg"
+                data-src={item.imagenes[0]}
+              />
+              <div class="flex gap-1">
+                <img
+                  src={item.imagenes[1]}
+                  alt="Imagen secundaria diferencial"
+                  class="w-1/2 h-32 object-contain hover:scale-105 transition-transform duration-300 rounded-lg"
+                  data-src={item.imagenes[1]}
+                />
+                <img
+                  src={item.imagenes[2]}
+                  alt="Imagen secundaria diferencial"
+                  class="w-1/2 h-32 object-contain hover:scale-105 transition-transform duration-300 rounded-lg"
+                  data-src={item.imagenes[2]}
+                />
+              </div>
+            </div>
 
-        <div class="p-8 bg-white rounded-xl shadow-md">
-          <h3 class="text-xl font-semibold mb-4">Trato cercano</h3>
-          <p>Atención personalizada y adaptada a tus necesidades, con cercanía y profesionalidad.</p>
-        </div>
-
-        <div class="p-8 bg-white rounded-xl shadow-md">
-          <h3 class="text-xl font-semibold mb-4">Resultados comprobados</h3>
-          <p>Recuperaciones rápidas y seguras, avaladas por años de experiencia en deporte y salud.</p>
-        </div>
+            <!-- Texto -->
+            <div class="p-6 text-center">
+              <h3 class="text-xl font-semibold mb-4">{item.titulo}</h3>
+              <p class="text-gray-700 leading-relaxed">{item.texto}</p>
+            </div>
+          </div>
+        ))}
       </div>
     </div>
+     <!-- Modal -->
+    <div id="modal" class="fixed inset-0 bg-black bg-opacity-80 hidden items-center justify-center z-50 p-4">
+      <img id="modal-img" class="max-h-[90vh] max-w-[90vw] object-contain rounded-lg" />
+    </div>
+
+    <script type="module">
+      const modal = document.getElementById("modal");
+      const modalImg = document.getElementById("modal-img");
+
+      // Seleccionamos todas las imágenes
+      document.querySelectorAll('img[data-src]').forEach(img => {
+        img.addEventListener('click', () => {
+          modalImg.src = img.dataset.src;
+          modal.classList.remove('hidden');
+          modal.classList.add('flex');
+        });
+      });
+
+      modal.addEventListener('click', () => {
+        modal.classList.add('hidden');
+        modal.classList.remove('flex');
+      });
+    </script>
   </section>
 </BaseLayout>
